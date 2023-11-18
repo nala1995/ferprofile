@@ -1,0 +1,639 @@
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+/*   --color-background: #262626;
+  --color-text: #ffffff; */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+
+/* Estilos para separar los bloques */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 15vh; /* Establece la altura como desees */
+}
+
+.containertwo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-bottom: 15px;
+}
+
+.navbar-container-main {
+  margin-bottom: 20px; /* Agrega margen inferior para separar la Navbar del párrafo */
+}
+
+.main-box-section{
+  margin: 40px;
+}
+
+
+/* navbar section */
+
+.navbar {
+  backdrop-filter: blur(10px);
+  /* background-color: #262626; */
+  position: absolute; /* Navbar fija al hacer scroll hacia abajo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 1000;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  filter: blur(10px); /* Aplica el efecto de fondo blur */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-item {
+  margin: 15px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: #d9d9d9;
+  display: flex;
+  align-items: center;
+}
+
+.box-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  /* display: flex;
+  align-items: center; */
+  position: relative;
+  align-items: end;
+}
+
+input[type="text"] {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  height:30px;
+  width:220px;
+  padding-right: 40px;
+}
+
+
+/* Estilos para el ícono de búsqueda */
+.search-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px; /* Ajusta el espacio entre el input y el ícono */
+}
+
+.git-icon{
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-top: 11px;
+}
+
+.logo-pack{
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item:hover svg {
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+}
+.navbar-item:hover{
+  color: #555353;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navbar-item:focus,
+.navbar-item:active {
+  color: #555353;
+}
+
+.mother-box:hover + .navbar-item {
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+  color: #555353;
+}
+
+/* codigo para dropmenu */
+
+/* Estilos para el elemento padre (box-icon) */
+.box-icon {
+  position: relative;
+}
+
+/* Estilos para el menú desplegable (mother-box) */
+.mother-box {
+  display: none;
+  width: 110px; /* this is a temporary measure */
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2); /* Fondo con transparencia */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  border-radius: 10px; /* Borde redondeado */
+  padding: 20px;
+  top: 100%; /* Coloca el menú debajo del elemento padre */
+  left: 0;
+  z-index: 1;
+  transition: opacity 0.3s; /* Animación de opacidad */
+  box-shadow: 0px 5px 10px rgba(221, 219, 219, 0.3);
+}
+
+/* Estilos para los elementos hijos (child-box) */
+.child-box {
+  color: #d8caca; /* Color de texto */
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Animación de fondo al hacer hover */
+  list-style: none;
+  border-radius: 10px;
+}
+
+/* Mostrar el menú desplegable al hacer hover en el elemento padre */
+.box-icon:hover .mother-box {
+  display: block;
+  opacity: 1;
+}
+
+/* Cambiar el fondo de los elementos hijos al hacer hover */
+.child-box:hover {
+  background-color: #5555; /* Cambia el color de fondo al hacer hover */
+}
+
+.mother-box:hover ~ .navbar-item {
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+  color: #555353;
+}
+
+/* here it is located the main section styleing */
+
+.main-box-section{
+  display: flex;
+  height: auto;
+  width: 100%;
+  margin: 15px;
+}
+
+.column1{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 20%;
+  height: auto;
+  margin: 2px;
+  margin-right: 15px;
+  /* box-shadow: 5px 0px 3px rgba(0, 0, 0, 0.2); */
+}
+
+.column2{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  max-height: 100vh;
+  margin: 32px;
+  box-shadow: -6px 0px 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0px -4px 5px rgba(0, 0, 0, 0.2);
+}
+
+:root {
+  --background-color: #262626; /* Establece el fondo predeterminado */
+  --text-color: #cdcdcd; /* Establece el color de texto predeterminado */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+ /* Estilos para el Navbar en modo oscuro */
+.dark-navbar,
+.dark-navbar .mother-box, /* Aplicar estilos a .mother-box dentro de .dark-navbar */
+.dark-navbar input[type="text"] { /* Aplicar estilos a input[type="text"] dentro de .dark-navbar */
+  backdrop-filter: blur(15px);
+  background-color: #262626; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-navbar .logochiqui {
+  color: #cdcdcd;
+}
+
+.light-navbar .logochiqui {
+  color: #cdcdcd;
+}
+
+/* Estilos para el Navbar en modo claro */
+.light-navbar,
+.light-navbar .mother-box, /* Aplicar estilos a .mother-box dentro de .light-navbar */
+.light-navbar input[type="text"] { /* Aplicar estilos a input[type="text"] dentro de .light-navbar */
+  backdrop-filter: blur(5px);
+  background-color: #ffffff; /* Fondo claro */
+  color: #262626; /* Texto oscuro */
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.uls{
+  padding: 0px;
+  margin: 5px;
+}
+
+.slide-box{
+  margin: 1px;
+}
+
+.container-col2{
+  margin: 10px;
+}
+
+.container-col1{
+  margin: 9px;
+}
+
+.menu-icon{
+  margin-right: 10px;
+}
+
+/*  */
+
+.slide-titles{
+  cursor: pointer;
+}
+
+.li-item{
+  display: none;
+}
+
+.li-item:hover {
+  color: #555353;
+  transition: 0.3s;
+}
+
+.slide-titles ul {
+  position: relative;
+}
+
+.slide-titles li {
+  position: relative;
+  padding-left: 15px; /* Espacio a la izquierda del li para que la línea sea visible */
+  list-style: none;
+  margin-left: 25px;
+}
+
+.slide-titles li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px; /* Ancho de la línea */
+  background-color: #555353; /* Color de la línea */
+}
+
+/*  */
+.li-item {
+  display: none; /* Oculta los elementos en estado inactivo */
+}
+
+.menu-icon {
+  transition: transform 0.3s; /* Agrega una transición para la rotación */
+}
+
+/* Estilo para el estado activo */
+.li-item.active {
+  display: block; /* Muestra los elementos en estado activo */
+}
+
+.menu-icon.active {
+  transform: rotate(90deg); /* Rota el icono en estado activo */
+}
+
+.glass{
+  display: none;
+  align-items: center;
+  height: 34px;
+  width: 34px;
+}
+
+/* Asegúrate de que los elementos li estén visibles cuando itemsVisibleX es true */
+.slide-titles.active .li-item {
+  display: block;
+}
+
+.Col-Main{
+  margin: 20px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.span-Paraghap{
+  border-top: 1px solid #262626;
+  border-radius: 5px;
+  box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+}
+
+.menu-burger{
+  display: none;
+}
+
+/* here the box-search will be */
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #262626;
+  border: 1px solid #262626;
+  margin-top: 15px;
+  box-shadow: #cdcdcd 0px 0px 5px;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1;
+}
+
+.search-item {
+  margin: 2px;
+  padding: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  list-style: none;
+}
+.search-item:hover {
+  background-color: #555353;
+  border-radius: 7px;
+}
+
+/* Barras de desplazamiento en navegadores WebKit (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+  background-color: #262626; /* Color de fondo */
+}
+
+/* Barra de desplazamiento en desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: #555353;
+  border-radius: 15px; /* Color del "dedo" de la barra de desplazamiento */
+}
+
+/* Barra de desplazamiento en hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #cdcdcd;
+  border-radius: 10px; /* Cambiar el color al pasar el ratón sobre la barra */
+}
+
+.search-bars {
+  display: none;
+}
+
+.search-icon-results {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin: 15px;
+  top: 195%; /* Coloca la sección debajo de la barra de navegación */
+  left: 10; /* Estirar a lo ancho de la pantalla */
+  width: 90%; /* Estirar a lo ancho de la pantalla */
+  background-color: #333; /* Fondo blanco o el color que prefieras */
+  backdrop-filter: blur(12px);
+  border-radius: 14px; /* Efecto de desenfoque */
+  border: 1px solid #ccc; /* Borde opcional */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); /* Sombra opcional */
+  z-index: 1; /* Asegura que esté por encima de otros elementos */
+  padding: 5px; /* Espaciado interior para el contenido */
+}
+
+.search-icon-results input {
+  width: 90%; /* Estirar el campo de búsqueda a lo ancho de la sección */
+  padding: 0px;
+  border: 1px solid #ccc; /* Borde opcional */
+  border-radius: 4px;
+  margin: 15px;
+}
+
+.search-icon-results ul {
+  list-style: none;
+  padding: 0;
+}
+
+.search-icon-results li {
+  margin: 7px;
+}
+
+/* Estiliza el enlace dentro de la lista de resultados como desees */
+.search-icon-results a {
+  text-decoration: none;
+  color: #cdcdcdb9; /* Color de enlace opcional */
+  /* Otros estilos para el enlace */
+}
+
+.search-icon:hover {
+  cursor: pointer; 
+}
+
+.logochiqui{
+  margin-right: 15px;
+}
+
+.disc {
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+}
+.disc:hover{
+  box-shadow: #cdcdcd;
+  transition: 0.3s;
+}
+
+/* mobil-responsive */
+
+@media screen and (max-width: 690px) {
+  .footer {
+    padding: 20px; 
+    font-size: 14px;
+    margin: 0px;
+    height: auto;
+    width: auto;
+  }
+  .search-bar {
+    display: none;
+  }
+  .navbar-container {
+    width: auto;
+    height: auto;
+  }
+
+  .navbar-menu {
+    padding: 0%;
+  }
+
+  .logo-pack {
+    height: 11px;
+    width: 11px;
+    margin: 0px;
+    padding: 0%;
+  }
+
+  .navbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .containertwo{
+    height: auto;
+    width: auto;
+  }
+
+  .main-box-section{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+  }
+  .column1{
+    display: none;
+    position: fixed;
+    width: auto;
+    height: auto;
+    background-color: #262626;
+    color: #cdcdcd;
+    border-radius: 10px;
+    box-shadow: #cdcdcd 0px 0px 5px;
+  }
+
+  .column1.visible {
+    display: flex;
+    align-items: center;
+  }
+  
+  .column2{
+    width: auto;
+    height: auto;
+    margin: 0px;
+    box-shadow: none;
+  }
+
+  .glass{
+    display: flex;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+  }
+
+  .menu-burger{
+    display: block;
+    align-items: center;
+    box-shadow: #cdcdcd;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    z-index: 1000;
+  }
+  .menu-burger:hover{
+    box-shadow: #a3a0a0;
+    transition: 0.3s;
+  }
+  
+  .search-bars{
+    display: block;
+  }
+
+  .popup {
+    width: auto;
+    height: auto;
+  }
+
+  .dsciframe {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+
+.dsciframe {
+  border-radius: 11px;
+  box-shadow: #cdcdcd 0px 0px 15px;
+}
+
+.conten-popup {
+  margin: 7px;
+}
+
+.popup {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  width: 40%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Asegúrate de que esté por encima de otros elementos */
+  text-align: center;
+  background-color: #262626;
+  color: #cdcdcd;
+  border-radius: 10px;
+  box-shadow: #cdcdcd 0px 0px 5px;
+  backdrop-filter: blur(12px);
+}
+
+.popup h2 {
+  font-size: 24px;
+}
+
+.popup p {
+  font-size: 16px;
+}
+
+.popup:hover {
+  cursor: pointer; /* Cambia el cursor al hacer hover sobre el popup */
+}
