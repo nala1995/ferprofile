@@ -637,3 +637,14 @@ body {
 .popup:hover {
   cursor: pointer; /* Cambia el cursor al hacer hover sobre el popup */
 }
+
+@media screen and (max-width: 385px) {
+  .navbar{
+    height: auto;
+    width: 380px;
+  }
+  .footer{
+    height: auto;
+    width: 340px;
+  }
+}
