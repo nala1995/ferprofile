@@ -641,7 +641,7 @@ body {
 @media screen and (max-width: 385px) {
   .navbar{
     height: auto;
-    width: 380px;
+    width: 395px;
   }
   .footer{
     height: auto;
